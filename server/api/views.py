@@ -9,6 +9,7 @@ from appProfile.models import Profile
 from keys import *
 import jwt
 import json
+from notice.models import *
 
 # Create your views here.
 
@@ -66,3 +67,33 @@ def login(request):
 		response['message'] = 'Wrong Credentials'
 		response['response_code'] = RESPONSE_CODE["forbidden"]
 	return JsonResponse(response)
+
+@csrf_exempt
+@controller_api
+def notice(request):
+	response = {}
+	all_notice = Notice.objects.all()
+
+	notice_list = []
+
+	for obj in all_notice:
+		temp_data = {
+			'id': obj.id,
+			'title': obj.title,
+			'description':obj.description,
+			'meta':obj.meta,
+			'start_date': obj.start_date,
+			'end_date': obj.end_date,
+
+		}
+
+		notice_list.append(temp_data)
+		temp_data = {}
+
+
+	data = {
+	'success' : True,
+	'data' : notice_list
+	}	
+
+	return JsonResponse(data)

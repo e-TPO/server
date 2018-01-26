@@ -19,6 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
+    url(r'^notice/', include('notice.urls')),
 ]
 
 admin.site.site_header = 'e-TPO Admin Panel'
