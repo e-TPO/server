@@ -17,10 +17,10 @@ import json
 def register(request):
 	response = {}
 	body = json.loads(request.body.decode('utf-8'))
-	temp_first_name = body['firstName']
-	temp_last_name = body['lastName']
+	temp_first_name = body['first_name']
+	temp_last_name = body['last_name']
 	temp_email = body['email']
-	temp_roll_no = body['rollNumber']
+	temp_roll_no = body['roll_number']
 	temp_password = body['password']
 	temp_username = temp_roll_no
 	user = User.objects.create_user(temp_username, temp_email, temp_password)
@@ -47,7 +47,7 @@ def register(request):
 def login(request):
 	response = {}
 	body = json.loads(request.body.decode('utf-8'))
-	temp_roll_no = body['rollNumber']
+	temp_roll_no = body['roll_number']
 	temp_password = body['password']
 	user = authenticate(username=temp_roll_no, password=temp_password)
 	if user is not None:
