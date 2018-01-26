@@ -16,6 +16,7 @@ import json
 @controller_api
 def register(request):
 	response = {}
+	print(request.body)
 	body = json.loads(request.body.decode('utf-8'))
 	temp_first_name = body['firstName']
 	temp_last_name = body['lastName']
@@ -27,7 +28,6 @@ def register(request):
 	user.first_name = temp_first_name
 	user.last_name = temp_last_name
 	user.save()
-	json_dump = {}
 	user.profile.roll_number = temp_roll_no
 	user.save()
 	json_dump = {}
