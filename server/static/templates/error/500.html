@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block 'title' %}
+	Sorry an error occured !
+{% endblock %}
+{% block content %}
+    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/error.css">
+    <!-- Error Page -->
+    <div style="background-image: url('/static/assets/img/logo.png'); background-size:cover;background-repeat:no-repeat; background-position: center center;  ">
+        <div class="error">
+            <div class="container-floud">
+                <div class="col-xs-12 ground-color text-center">
+                    <div class="container-error-500">
+                        <div class="clip"><div class="shadow"><span class="digit thirdDigit"></span></div></div>
+                        <div class="clip"><div class="shadow"><span class="digit secondDigit"></span></div></div>
+                        <div class="clip"><div class="shadow"><span class="digit firstDigit"></span></div></div>
+                        <div class="msg">OH!<span class="triangle"></span></div>
+                    </div>
+                    <h2 class="h1">Sorry! An error occured while processing your request :-(</h2>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- Error Page -->
+    <script type="text/javascript" src="/static/assets/js/500.js"></script>
+{% endblock %}

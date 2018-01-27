@@ -20,6 +20,9 @@ from django.contrib import admin
 from placement import views as placement_views
 from auth import views as auth_views
 
+handler404 = 'auth_views.handler404'
+handler500 = 'auth_views.handler500'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
@@ -27,6 +30,7 @@ urlpatterns = [
     url(r'^placement/', include('placement.urls')),
     url(r'^login', auth_views.login_view),
     url(r'^logout', auth_views.logout_view),
+    url(r'^signup', auth_views.signup_view),
     url(r'^$', placement_views.index),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
