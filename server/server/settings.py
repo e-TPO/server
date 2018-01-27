@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'appProfile',
     'notice',
     'notification',
+    'placement',
+    'article'
 ]
 
 MIDDLEWARE = [

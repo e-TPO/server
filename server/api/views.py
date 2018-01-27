@@ -48,6 +48,7 @@ def register(request):
 def login(request):
 	response = {}
 	body = json.loads(request.body.decode('utf-8'))
+	# print(body)
 	temp_roll_no = body['rollNumber']
 	temp_password = body['password']
 	user = authenticate(username=temp_roll_no, password=temp_password)

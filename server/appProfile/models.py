@@ -25,6 +25,9 @@ class Profile(models.Model):
 	image_tag.short_description = 'Image'
 	image_tag.allow_tags = True
 
+	def __str__(self):
+		return  str(self.user)
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
 	if created:
@@ -43,4 +46,5 @@ class CompanyProfile(models.Model):
 	status = models.BooleanField(default=False)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
-		
+	def __str__(self):
+		return  str(self.name)
