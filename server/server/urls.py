@@ -28,9 +28,12 @@ urlpatterns = [
     url(r'^api/', include('api.urls')),
     # url(r'^notice/', include('notice.urls')),
     url(r'^placement/', include('placement.urls')),
+    url(r'^auth/', include('auth.urls')),
     url(r'^login', auth_views.login_view),
     url(r'^logout', auth_views.logout_view),
     url(r'^signup', auth_views.signup_view),
+    url(r'^placement/', include('auth.urls')),
+    url(r'^profile', auth_views.profile_view),
     url(r'^$', placement_views.index),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

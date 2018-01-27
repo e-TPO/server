@@ -12,6 +12,12 @@ import requests
 
 noise_list = set(stopwords.words('english') + list(punctuation) + ["said"])
 
+def techcrunch_scraper(request, url):
+	page = requests.get(url)
+	soup = BeautifulSoup(url)
+	article = soup.find(class_="article-entry text").text
+	title = soup.find(class_="alpha tweet-title").text
+
 def remove_noise(text):
 	words = word_tokenize(text)
 	noise_free_words = [word.lower() for word in words if word.lower() not in noise_list]

@@ -19,6 +19,8 @@ from . import views
 urlpatterns = [
     url(r'^v1.0/register', views.register, name='register'),
     url(r'^v1.0/login', views.login, name='login'),
-    url(r'^v1.0/get_notice', views.notice, name='notice'),
+    url(r'^v1.0/get_notice', views.get_notices, name='get_notices'),
+    url(r'^v1.0/get_article', views.get_articles, name='get_articles'),
+    url(r'^v1.0/get_placement_session', views.get_placement_sessions, name='get_placement_sessions'),
     # url(r'^api/', include('api.urls')),
 ]

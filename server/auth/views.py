@@ -29,6 +29,17 @@ def logout_view(request):
 def signup_view(request):
 	return render(request, 'base/signup.html')
 
+@controller_web
+def profile_view(request):
+	return render(request, 'base/profile.html')
+
+@controller_web
+def update_profile(request):
+	temp_email = request.POST.get('email')
+	temp_contact_number = request.POST.get('contact_number')
+	temp_
+	return redirect('/')
+
 def handler404(request):
 	response = render_to_response('error/404.html', {},context_instance=RequestContext(request))
 	response.status_code = 404
