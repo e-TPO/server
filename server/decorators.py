@@ -1,5 +1,6 @@
 from keys import *
 from django.http import JsonResponse
+from django.shortcuts import render
 
 def controller_api(function):
 	def wrap(request, *args, **kwargs):
@@ -26,7 +27,7 @@ def controller_web(function):
 			response['success'] = False
 			response['message'] = str(e)
 			response['response_code'] = RESPONSE_CODE["internal_server_error"]
-			return JsonResponse(response)
+			return render(request, 'error/500.html', response)
 	wrap.__doc__ = function.__doc__
 	wrap.__name__ = function.__name__
 	return wrap
