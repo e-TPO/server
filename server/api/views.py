@@ -72,19 +72,19 @@ def login(request):
 @controller_api
 def notice(request):
 	response = {}
-	all_notice = Notice.objects.all()
+	all_notice = Notice.objects.filter(status=True)
 
 	notice_list = []
-
+	temp_meta = {}
+	temp_meta['image'] = str("http://127.0.0.1:8000/static/assets/img/new_logo.png")
 	for obj in all_notice:
 		temp_data = {
 			'id': obj.id,
 			'title': obj.title,
 			'description':obj.description,
-			'meta':obj.meta,
+			'meta':temp_meta,
 			'start_date': obj.start_date,
 			'end_date': obj.end_date,
-
 		}
 
 		notice_list.append(temp_data)
