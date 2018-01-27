@@ -14,12 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
+from placement import views as placement_views
+from auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
-]
+    # url(r'^notice/', include('notice.urls')),
+    url(r'^placement/', include('placement.urls')),
+    url(r'^login', auth_views.login_view),
+    url(r'^logout', auth_views.logout_view),
+    url(r'^$', placement_views.index),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 admin.site.site_header = 'e-TPO Admin Panel'
 admin.site.site_title = 'e-TPO Admin Panel'
