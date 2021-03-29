@@ -64,7 +64,7 @@ pyexcel==0.5.3
 pyexcel-io==0.5.1
 pyexcel-webio==0.1.2
 pygame===1.9.1release
-Pygments==2.2.0
+Pygments==2.7.4
 pygobject==3.20.0
 PyJWT==1.5.3
 pylint==1.7.2
