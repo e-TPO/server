@@ -95,7 +95,7 @@ snowballstemmer==1.2.1
 Sphinx==1.6.4
 sphinxcontrib-websupport==1.0.1
 texttable==0.9.1
-Twisted==16.0.0
+Twisted==22.4.0
 typing==3.6.2
 unity-lens-photos==1.0
 urllib3==1.22
