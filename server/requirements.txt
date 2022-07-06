@@ -31,7 +31,7 @@ fluendo-eula==0.6
 googletrans==2.2.0
 gWakeOnLan==0.5.1
 gyp==0.1
-html5lib==0.999
+html5lib==0.999999999
 idna==2.6
 imagesize==0.7.1
 ipaddress==1.0.16
