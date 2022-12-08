@@ -10,7 +10,7 @@ beautifulsoup4==4.4.1
 billiard==3.5.0.3
 boto==2.38.0
 celery==4.1.0
-certifi==2017.7.27.1
+certifi==2022.12.7
 chardet==3.0.4
 configparser==3.5.0
 cryptography==1.2.3
